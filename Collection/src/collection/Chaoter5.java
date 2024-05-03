@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class TaskManager {
+public class Chaoter5 {
 	public static void main(String[] args) {
 		List<Task> tasks = new ArrayList<>(List.of(
 				new Task(LocalDate.of(2021, 10, 21), "牛乳を買う。"),
