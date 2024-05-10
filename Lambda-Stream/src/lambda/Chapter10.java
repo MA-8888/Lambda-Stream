@@ -2,7 +2,6 @@ package lambda;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Chapter10 {
@@ -16,13 +15,14 @@ public class Chapter10 {
 
 		long count = list.stream()
 				.filter(task -> !task.isDone())
-				.sorted(Comparator.comparing(Task::getDate))
 				.count();
 
 		System.out.println("未完了のタスクの個数は" + count);
 		System.out.println("【未完了のタスクを昇順に並び替えて一覧表示】");
 
 		list.stream()
+				.filter(task -> !task.isDone())
+				.sorted((t1, t2) -> t1.getDate().compareTo(t2.getDate()))
 				.forEach(System.out::println);
 
 	}
